@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H02-wa-Lag">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de Tarefas-->
+        <scene sceneID="m1c-HX-9eO">
+            <objects>
+                <tableViewController id="dgk-IP-TWQ" customClass="ViewController" customModule="gerenciador_tarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R8s-9K-dFP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="vSr-4T-hOQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vSr-4T-hOQ" id="lyh-1M-q6T">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dgk-IP-TWQ" id="WNI-n0-7fh"/>
+                            <outlet property="delegate" destination="dgk-IP-TWQ" id="tQz-ru-r3u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Tarefas" id="DXN-o3-duf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FWc-n0-ZhM">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="wLe-B7-soy" kind="show" id="3RR-i4-HFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxP-eT-HqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="99.400299850074973"/>
+        </scene>
+        <!--Tarefa View Controller-->
+        <scene sceneID="Atv-MN-2dZ">
+            <objects>
+                <viewController id="wLe-B7-soy" customClass="TarefaViewController" customModule="gerenciador_tarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MRk-cm-ACs"/>
+                        <viewControllerLayoutGuide type="bottom" id="ncF-OQ-nF7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UEA-cj-vAX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova Tarefa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Ht-nU3">
+                                <rect key="frame" x="16" y="72" width="96" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="j45-qC-XKX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWN-NO-Z5x">
+                                <rect key="frame" x="16" y="101" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-kZ-9VR">
+                                <rect key="frame" x="155" y="139" width="65" height="30"/>
+                                <state key="normal" title="Adicionar"/>
+                                <connections>
+                                    <action selector="addTask" destination="wLe-B7-soy" eventType="touchUpInside" id="3w5-6h-42K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GcA-kZ-9VR" firstAttribute="top" secondItem="uWN-NO-Z5x" secondAttribute="bottom" constant="8" id="26G-fv-nPI"/>
+                            <constraint firstItem="uWN-NO-Z5x" firstAttribute="leading" secondItem="UEA-cj-vAX" secondAttribute="leadingMargin" id="5P7-6c-Jj4"/>
+                            <constraint firstItem="uWN-NO-Z5x" firstAttribute="trailing" secondItem="UEA-cj-vAX" secondAttribute="trailingMargin" id="RzC-sR-dZv"/>
+                            <constraint firstItem="uWN-NO-Z5x" firstAttribute="top" secondItem="Zm9-Ht-nU3" secondAttribute="bottom" constant="8" id="TYb-KY-H1p"/>
+                            <constraint firstItem="Zm9-Ht-nU3" firstAttribute="top" secondItem="MRk-cm-ACs" secondAttribute="bottom" constant="8" id="X8D-RV-W9a"/>
+                            <constraint firstItem="Zm9-Ht-nU3" firstAttribute="leading" secondItem="UEA-cj-vAX" secondAttribute="leadingMargin" id="pZj-eW-ys8"/>
+                            <constraint firstItem="GcA-kZ-9VR" firstAttribute="centerX" secondItem="UEA-cj-vAX" secondAttribute="centerX" id="rZX-hA-nAH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskDescription" destination="uWN-NO-Z5x" id="gwE-2q-4Nu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZQ-GI-YIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="98.50074962518741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LmQ-Md-rXV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H02-wa-Lag" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lzg-jc-ep7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dgk-IP-TWQ" kind="relationship" relationship="rootViewController" id="Bnz-Qq-5NN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gsb-BT-6BN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119.2" y="99.400299850074973"/>
+        </scene>
+    </scenes>
+</document>
