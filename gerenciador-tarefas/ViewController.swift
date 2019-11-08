@@ -13,8 +13,6 @@ class ViewController: UITableViewController {
     var tasks: [String]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         tasks = taskUser.listTasks()
         
     }
@@ -26,9 +24,6 @@ class ViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,7 +42,7 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             taskUser.removeTask(indice: indexPath.row)
             tasks = taskUser.listTasks()
