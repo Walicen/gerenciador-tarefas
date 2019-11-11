@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H02-wa-Lag">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H02-wa-Lag">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" hint="Conteúdo de sua tarefa" label="Tarefa">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -59,7 +59,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova Tarefa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm9-Ht-nU3">
-                                <rect key="frame" x="16" y="72" width="96" height="21"/>
+                                <rect key="frame" x="16" y="52" width="96" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Nova Tarefa"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="j45-qC-XKX"/>
                                 </constraints>
@@ -68,28 +69,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWN-NO-Z5x">
-                                <rect key="frame" x="16" y="101" width="343" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="81" width="343" height="34"/>
+                                <accessibility key="accessibilityConfiguration" hint="Inserir conteúdo da tarefa" label="Nova tarefa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-kZ-9VR">
-                                <rect key="frame" x="155" y="139" width="65" height="30"/>
-                                <state key="normal" title="Adicionar"/>
-                                <connections>
-                                    <action selector="addTask" destination="wLe-B7-soy" eventType="touchUpInside" id="3w5-6h-42K"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GcA-kZ-9VR" firstAttribute="top" secondItem="uWN-NO-Z5x" secondAttribute="bottom" constant="8" id="26G-fv-nPI"/>
                             <constraint firstItem="uWN-NO-Z5x" firstAttribute="leading" secondItem="UEA-cj-vAX" secondAttribute="leadingMargin" id="5P7-6c-Jj4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zm9-Ht-nU3" secondAttribute="trailing" constant="20" symbolic="YES" id="6gM-s5-6Bn"/>
                             <constraint firstItem="uWN-NO-Z5x" firstAttribute="trailing" secondItem="UEA-cj-vAX" secondAttribute="trailingMargin" id="RzC-sR-dZv"/>
                             <constraint firstItem="uWN-NO-Z5x" firstAttribute="top" secondItem="Zm9-Ht-nU3" secondAttribute="bottom" constant="8" id="TYb-KY-H1p"/>
                             <constraint firstItem="Zm9-Ht-nU3" firstAttribute="top" secondItem="MRk-cm-ACs" secondAttribute="bottom" constant="8" id="X8D-RV-W9a"/>
-                            <constraint firstItem="Zm9-Ht-nU3" firstAttribute="leading" secondItem="UEA-cj-vAX" secondAttribute="leadingMargin" id="pZj-eW-ys8"/>
-                            <constraint firstItem="GcA-kZ-9VR" firstAttribute="centerX" secondItem="UEA-cj-vAX" secondAttribute="centerX" id="rZX-hA-nAH"/>
+                            <constraint firstItem="Zm9-Ht-nU3" firstAttribute="leading" secondItem="uWN-NO-Z5x" secondAttribute="leading" id="iGP-Id-dzQ"/>
                         </constraints>
                     </view>
                     <connections>
